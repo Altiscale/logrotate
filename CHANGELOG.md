@@ -1,6 +1,36 @@
 logrotate Cookbook CHANGELOG
 ============================
-This file is used to list changes made in each version of the logrotate cookbook.
+This file is used to list changes made in each version of the
+logrotate cookbook.
+
+v1.6.0
+------
+
+### Bugs
+
+- Fix documentation error
+
+### Improvements
+
+- Support for options "compresscmd", "uncompresscmd", "compressext"
+- Allow nodateext as parameter for logrotate_app definition
+- Move to chefspec ~> 3.0
+
+v1.5.0
+------
+
+### Bugs
+- Fix missing end tag in template
+- Don't re-initialize constants.
+- Fix rubocop finding
+
+### Improvements
+- [COOK-3911] Allow to use maxsize parameter.
+- [COOK-4000] Allow to use dateyesterday option.
+- [COOK-4024] Allow to use su parameter.
+- [COOK-4175] Allows use of the dateformat parameter.
+- Loosen test-kitchen version constraint
+- Add rvm files to gitignore
 
 
 v1.4.0

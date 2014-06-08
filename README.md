@@ -28,7 +28,7 @@ Note that defining a valueless directive with a falsey value will not make it fa
 node.override['logrotate']['global']['compress'] = false
 ```
 
-To fully overrride a booleanish directive like `compress`, you should probably remove the positive form and add the negative form:
+To fully override a booleanish directive like `compress`, you should probably remove the positive form and add the negative form:
 
 ```ruby
 node.override['logrotate']['global']['compress'] = false
@@ -88,6 +88,7 @@ The definition takes the following params:
 - `path`: specifies a single path (string) or multiple paths (array) that should have logrotation stanzas created in the config file. No default, this must be specified.
 - `enable`: true/false, if true it will create the template in /etc/logrotate.d.
 - `frequency`: sets the frequency for rotation. Default value is 'weekly'. Valid values are: daily, weekly, monthly, yearly, see the logrotate man page for more information.
+- `dateformat`: specifies date extension with %Y, %m, %d, and %s. The default value is -%Y%m%d.
 - `size`: Log files are rotated when they grow bigger than size bytes.
 - `maxsize`: Log  files  are  rotated  when  they  grow bigger than size bytes even before the additionally specified time interval.
 - `su`: Rotate log files set under this user and group instead of using default user/group.
@@ -95,7 +96,7 @@ The definition takes the following params:
 - `template_mode`: the mode to create the logrotate template with (default "0440")
 - `template_owner`: the owner of the logrotate template (default "root")
 - `template_group`: the group of the logrotate template (default "root")
-- `cookbook`: select the template source from the specified cookbook. By default it will use the cookbook where the definition is used.
+- `cookbook`: select the template source from the specified cookbook. By default it will use the template from the logrotate cookbook.
 - `create`: creation parameters for the logrotate "create" config, follows the form "mode owner group". This is an optional parameter, and is nil by default.
 - `postrotate`: lines to be executed after the log file is rotated
 - `prerotate`: lines to be executed before the log file is rotated

@@ -5,6 +5,9 @@
 <%- if @frequency %>
   <%= @frequency %>
 <%- end %>
+<%- if @dateformat %> 
+  dateformat <%= @dateformat %>
+<%- end %>
 <%- if @size %>
   size <%= @size %>
 <%- end %>
@@ -25,6 +28,15 @@
 <%- end %>
 <%- if @olddir %>
   olddir <%= @olddir %>
+<%- end %>
+<%- if @compresscmd %>
+  compresscmd <%= @compresscmd %>
+<%- end %>
+<%- if @uncompresscmd %>
+  uncompresscmd <%= @uncompresscmd %>
+<%- end %>
+<%- if @compressext %>
+  compressext <%= @compressext %>
 <%- end %>
 <% @options.each do |o| -%>
   <%= o %>
